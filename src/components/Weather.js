@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+import DisplayWeather from "./DisplayWeather";
+import "./weather.css";
+
+require('dotenv').config()
+
+function Weather() {
+  const [weather, setWeather] = useState([]);
+  const [form, setForm] = useState({
+    zip: ""
+  });
+
+  const APIKEY = "Enter Your APIKEY here";
+  async function weatherData(e) {
+    e.preventDefault();
+    if (form.zip == "") {
+      alert("Add values");
+    } else {
+      const data = await fetch(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(form.zip)}.json?access_token=${process.env.REACT_APP_API_KEY_MAPBOX}&limit=1`
+        // `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`
+      )
+      .then((res) => res.json())
+      .then((location) => {
+        console.log(location);
+        const latitude = location.features[0].center[1];
+        const longitude = location.features[0].center[0];
+        console.log(latitude);
+        console.log(longitude);
+        const data2 = fetch(
+          `http://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY_OPEN_WEATHER_MAP}&units=imperial`
+        )
+        .then((res2) => res2.json())
+        .then((weatherData) => {
+          console.log(weatherData);
+        })
+      })
+      //   .then((res) => res.json())
+      //   .then((data) => data);
+
+      // setWeather({ data: data });
+    }
+  }
+
+  const handleChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    if (name == "zip") {
+      setForm({ ...form, zip: value });
+    }
+  };
+  return (
+    <div className="weather">
+      <span className="title">Weather App</span>
+      <br />
+      <form>
+        <input
+          type="text"
+          placeholder="zip"
+          name="zip"
+          onChange={(e) => handleChange(e)}
+        />
+        &nbsp; &nbsp; &nbsp;&nbsp;
+        <button className="getweather" onClick={(e) => weatherData(e)}>
+          Submit
+        </button>
+      </form>
+
+      {/* {console.log(weather)} */}
+      {weather.data != undefined ? (
+        <div>
+          <DisplayWeather data={weather.data} />
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+export default Weather;
