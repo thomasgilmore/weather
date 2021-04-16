@@ -10,7 +10,7 @@ function Weather() {
     zip: ""
   });
 
-  const APIKEY = "Enter Your APIKEY here";
+  // const APIKEY = "Enter Your APIKEY here";
   async function weatherData(e) {
     e.preventDefault();
     if (form.zip == "") {
@@ -25,14 +25,24 @@ function Weather() {
         console.log(location);
         const latitude = location.features[0].center[1];
         const longitude = location.features[0].center[0];
-        console.log(latitude);
-        console.log(longitude);
+        // console.log(latitude);
+        // console.log(longitude);
         const data2 = fetch(
           `http://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY_OPEN_WEATHER_MAP}&units=imperial`
         )
         .then((res2) => res2.json())
         .then((weatherData) => {
-          console.log(weatherData);
+          console.log(weatherData.daily);
+          const days = weatherData.daily;
+          days.forEach(day => {
+            console.log(day);
+            const time = day.dt;
+            const temp = day.temp.day;
+            const rain = day.rain;
+            const weatherId = day.weather[0].id;
+            const weatherIcon = day.weather[0].icon;
+    
+          });
         })
       })
       //   .then((res) => res.json())
