@@ -48,15 +48,39 @@
     outline: none;
   }
 
-  .weatherCardContainer {
+  /* .weatherCardContainer {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: row; */
+    /* flex-wrap: nowrap;
     justify-content: center;
     margin: 20px 10px;
     width: 100%;
-  }
+  } */
 
   .weatherCardContainer > div {
     display: flex;
+    flex-wrap: inherit;
+    flex-direction: inherit;
+  }
+
+  @media (min-width: 200px) {
+    .weatherCardContainer {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 2px  0 2px;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .weatherCardContainer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      margin: 20px 2px 0 2px;
+      width: 100%;
+    }
   }
