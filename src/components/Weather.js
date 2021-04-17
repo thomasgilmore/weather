@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DisplayWeather from "./DisplayWeather";
 import "./weather.css";
 import { WeatherIcon } from './WeatherIcon';
+import moment from 'moment';
 
 require('dotenv').config()
 
@@ -37,7 +38,10 @@ function Weather() {
           const days = weatherData.daily;
           days.forEach(day => {
             console.log(day);
-            const time = day.dt;
+            const time = day.dt * 1000;
+            console.log(time);
+            const dayOfWeek = moment(time).format('dddd');
+            console.log(dayOfWeek);
             const temp = day.temp.day;
             const rain = day.rain;
             const weatherId = day.weather[0].id;
