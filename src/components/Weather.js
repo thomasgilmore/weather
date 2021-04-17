@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DisplayWeather from "./DisplayWeather";
 import "./weather.css";
+import { WeatherIcon } from './WeatherIcon';
 
 require('dotenv').config()
 
@@ -41,7 +42,8 @@ function Weather() {
             const rain = day.rain;
             const weatherId = day.weather[0].id;
             const weatherIcon = day.weather[0].icon;
-    
+            const weatherImage = WeatherIcon(weatherId, weatherIcon);
+            
           });
         })
       })
