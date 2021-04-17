@@ -1,6 +1,12 @@
-.card {
+.weatherCard {
     display: flex;
     flex-direction: column;
     border: 1px solid gray;
     margin: 5px;
+}
+
+.weatherPicture {
+    height: auto;
+    width: 100px;
+    margin: auto;
 }

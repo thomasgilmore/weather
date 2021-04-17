@@ -98,14 +98,14 @@ console.log(weather);
       </form>
     </div>
     
-    <div className="weatherCardContainer">
-        {/* {console.log(weather)} */}
-      {weather.data != undefined ? (
-        <div>
-          {weather.data}
-        </div>
-      ) : null}
-    </div>
+      <div className="weatherCardContainer">
+          {/* {console.log(weather)} */}
+        {weather.data != undefined ? (
+          <div>
+            {weather.data}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }

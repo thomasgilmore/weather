@@ -3,9 +3,9 @@ import './weathercard.css';
 
 function WeatherCard(props) {
     return (
-        <div className="card">
+        <div className="weatherCard">
             <p>{props.weekDay}</p>
-            <img src={props.image} alt={props.image} />
+            <img src={props.image} alt={props.image} className="weatherPicture" />
             <p>{props.tempeture}</p>
             <p>{props.raining}</p>
         </div>

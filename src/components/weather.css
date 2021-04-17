@@ -51,5 +51,12 @@
   .weatherCardContainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: center;
+    margin: 20px 10px;
+    width: 100%;
+  }
+
+  .weatherCardContainer > div {
+    display: flex;
   }
