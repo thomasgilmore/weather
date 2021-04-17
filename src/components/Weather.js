@@ -87,13 +87,13 @@ console.log(weather);
       <form>
         <input
           type="text"
-          placeholder="zip"
+          placeholder="ZIP"
           name="zip"
           onChange={(e) => handleChange(e)}
         />
         &nbsp; &nbsp; &nbsp;&nbsp;
         <button className="getweather" onClick={(e) => weatherData(e)}>
-          Submit
+          Search
         </button>
       </form>
     </div>
