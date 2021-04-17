@@ -47,3 +47,9 @@
   .weather .getweather:focus {
     outline: none;
   }
+
+  .weatherCardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }

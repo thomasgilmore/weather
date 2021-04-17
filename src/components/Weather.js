@@ -51,14 +51,13 @@ console.log(weather);
             console.log(dayOfWeek);
             const temp = day.temp.day;
             const rain = day.rain;
+            console.log(rain)
             const weatherId = day.weather[0].id;
             const weatherIcon = day.weather[0].icon;
             const weatherImage = WeatherIcon(weatherId, weatherIcon);
 
-            const weatherCard = <WeatherCard key={time}/>
+            const weatherCard = <WeatherCard key={time} weekDay={dayOfWeek} tempeture={temp} raining={rain} image={weatherImage} />
             weatherCards.push(weatherCard)
-
-
 
           });
 
@@ -98,7 +97,8 @@ console.log(weather);
         </button>
       </form>
     </div>
-    <div>
+    
+    <div className="weatherCardContainer">
         {/* {console.log(weather)} */}
       {weather.data != undefined ? (
         <div>
