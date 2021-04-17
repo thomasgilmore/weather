@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import DisplayWeather from "./DisplayWeather";
+// import DisplayWeather from "./DisplayWeather";
 import "./weather.css";
 import { WeatherIcon } from './WeatherIcon';
 import moment from 'moment';
+import WeatherCard from './WeatherCard';
 
 require('dotenv').config()
 
@@ -48,6 +49,13 @@ function Weather() {
             const weatherIcon = day.weather[0].icon;
             const weatherImage = WeatherIcon(weatherId, weatherIcon);
             
+            let weatherCards = []
+
+            const weatherCard = <WeatherCard key={time}/>
+            weatherCards.push(weatherCard)
+
+            setWeather({ data: weatherCards })
+
           });
         })
       })
@@ -67,6 +75,7 @@ function Weather() {
     }
   };
   return (
+    <div>
     <div className="weather">
       <span className="title">Weather App</span>
       <br />
@@ -82,13 +91,15 @@ function Weather() {
           Submit
         </button>
       </form>
-
-      {/* {console.log(weather)} */}
+    </div>
+    <div>
+        {/* {console.log(weather)} */}
       {weather.data != undefined ? (
         <div>
-          <DisplayWeather data={weather.data} />
+          {weather.data}
         </div>
       ) : null}
+    </div>
     </div>
   );
 }
