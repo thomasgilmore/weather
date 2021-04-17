@@ -13,6 +13,9 @@ function Weather() {
     zip: ""
   });
 
+console.log(form);
+console.log(weather);
+
   // const APIKEY = "Enter Your APIKEY here";
   async function weatherData(e) {
     e.preventDefault();
@@ -37,6 +40,9 @@ function Weather() {
         .then((weatherData) => {
           console.log(weatherData.daily);
           const days = weatherData.daily;
+          
+          let weatherCards = []
+
           days.forEach(day => {
             console.log(day);
             const time = day.dt * 1000;
@@ -48,15 +54,15 @@ function Weather() {
             const weatherId = day.weather[0].id;
             const weatherIcon = day.weather[0].icon;
             const weatherImage = WeatherIcon(weatherId, weatherIcon);
-            
-            let weatherCards = []
 
             const weatherCard = <WeatherCard key={time}/>
             weatherCards.push(weatherCard)
 
-            setWeather({ data: weatherCards })
+
 
           });
+
+          setWeather({ data: weatherCards })
         })
       })
       //   .then((res) => res.json())
