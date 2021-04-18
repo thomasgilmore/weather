@@ -1,0 +1,19 @@
+@media (min-width: 200px) {
+    .footer {
+        font-size: 12px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        /* position: ; */
+        bottom: 0;
+    }
+}
+
+@media (min-width: 900px) {
+    .footer {
+        font-size: 12px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        position: fixed;
+        bottom: 0;
+    }
+}
