@@ -1,4 +1,9 @@
 body {
+  background: url("./sindy-sussengut-CN-GdKQdxu8-unsplash.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,22 +17,3 @@ code {
     monospace;
 }
 
-@media (min-width: 200px) {
-  body {
-    background: url("./sindy-sussengut-CN-GdKQdxu8-unsplash.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-}
-
-@media (min-width: 900px) {
-  body {
-    background-image: url("./sindy-sussengut-CN-GdKQdxu8-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-}
