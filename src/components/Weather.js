@@ -97,7 +97,7 @@ console.log(weather);
         </button>
       </form>
     </div>
-    
+     
       <div className="weatherCardContainer">
           {/* {console.log(weather)} */}
         {weather.data !== undefined ? (
