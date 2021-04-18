@@ -19,7 +19,7 @@ console.log(weather);
   // const APIKEY = "Enter Your APIKEY here";
   async function weatherData(e) {
     e.preventDefault();
-    if (form.zip == "") {
+    if (form.zip === "") {
       alert("Add values");
     } else {
       const data = await fetch(
@@ -50,7 +50,7 @@ console.log(weather);
             const dayOfWeek = moment(time).format('dddd');
             console.log(dayOfWeek);
             const temp = day.temp.day;
-            const rain = day.rain;
+            const rain = `${Math.floor(day.pop * 100)}%`;
             console.log(rain)
             const weatherId = day.weather[0].id;
             const weatherIcon = day.weather[0].icon;
@@ -75,7 +75,7 @@ console.log(weather);
     let name = e.target.name;
     let value = e.target.value;
 
-    if (name == "zip") {
+    if (name === "zip") {
       setForm({ ...form, zip: value });
     }
   };
@@ -100,7 +100,7 @@ console.log(weather);
     
       <div className="weatherCardContainer">
           {/* {console.log(weather)} */}
-        {weather.data != undefined ? (
+        {weather.data !== undefined ? (
           <div>
             {weather.data}
           </div>
