@@ -82,7 +82,7 @@ console.log(weather);
   return (
     <div>
     <div className="weather">
-      <span className="title">Weather App</span>
+      <span className="title">Weather</span>
       <br />
       <form>
         <input
