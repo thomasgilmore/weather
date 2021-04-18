@@ -13,3 +13,16 @@
     width: 100px;
     margin: auto;
 }
+
+.rainContainer {
+    display: flex;
+    margin: 5px auto 10px auto;
+}
+
+.rain {
+    margin-top: 7px;
+}
+
+.umbrella {
+    height: 30px;
+}

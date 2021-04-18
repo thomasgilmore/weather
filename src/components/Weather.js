@@ -49,7 +49,7 @@ console.log(weather);
             console.log(time);
             const dayOfWeek = moment(time).format('dddd');
             console.log(dayOfWeek);
-            const temp = day.temp.day;
+            const temp = Math.floor(day.temp.day);
             const rain = `${Math.floor(day.pop * 100)}%`;
             console.log(rain)
             const weatherId = day.weather[0].id;
