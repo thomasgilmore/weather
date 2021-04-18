@@ -23,7 +23,7 @@
   
   .weather form input:focus {
     outline: none;
-    border-bottom: 3px dashed rgb(2, 57, 88);
+    border-bottom: 3px solid rgb(2, 57, 88);
   }
   
   .weather .getweather {
