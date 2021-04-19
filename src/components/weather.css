@@ -1,6 +1,5 @@
 .weather {
     margin: 25px auto 0 auto;
-    /* border: 3px dashed grey; */
     border-radius: 20px;
     padding-bottom: 30px;
     width: max-content;
@@ -47,15 +46,6 @@
   .weather .getweather:focus {
     outline: none;
   }
-
-  /* .weatherCardContainer {
-    display: flex;
-    flex-direction: row; */
-    /* flex-wrap: nowrap;
-    justify-content: center;
-    margin: 20px 10px;
-    width: 100%;
-  } */
 
   .weatherCardContainer > div {
     display: flex;
