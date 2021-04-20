@@ -12,9 +12,6 @@ function Weather() {
     zip: ""
   });
 
-console.log(form);
-console.log(weather);
-
   async function weatherData(e) {
     e.preventDefault();
     if (form.zip === "") {
