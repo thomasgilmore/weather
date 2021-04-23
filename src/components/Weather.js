@@ -49,7 +49,9 @@ function Weather() {
 
           setWeather({ data: weatherCards })
         })
+        console.log(data2);
       })
+      console.log(data);
     }
   }
 
