@@ -25,7 +25,7 @@ function Weather() {
         const latitude = location.features[0].center[1];
         const longitude = location.features[0].center[0];
         const data2 = fetch(
-          `http://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY_OPEN_WEATHER_MAP}&units=imperial`
+          `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY_OPEN_WEATHER_MAP}&units=imperial`
         )
         .then((res2) => res2.json())
         .then((weatherData) => {
